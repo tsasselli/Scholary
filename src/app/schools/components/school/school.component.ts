@@ -10,6 +10,8 @@ export class SchoolComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
+  
 }
