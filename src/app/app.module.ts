@@ -1,3 +1,4 @@
+import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -18,7 +19,8 @@ import { ShareLinkComponent } from './subjects/components/share-new-link/share-l
     ShareLinkComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
