@@ -6,7 +6,7 @@ import { switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import 'rxjs/add/observable/of';
 import { Router } from '@angular/router';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 
 
 @Injectable({
@@ -30,6 +30,31 @@ export class AuthService {
                 }))
                }
 
+    googleLogin() {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      return this.oAuthLogin(provider);
+    }
+
+    private oAuthLogin(provider) {
+      this.afAuth.auth.signInWithPopup(provider)
+        .then((credential) => {
+          this.updateUserData(credential.user)
+        })
+    }
+
+    private updateUserData(user) {
+      // sets user data to firestore on login 
+      const userRef: AngularFirestoreDocument<Users> = this.afs.doc(`users/${user.uid}`);
+
+      const data: Users = {
+        uid: user.uid,
+        email: user.email,
+        displayName: user.displayName,
+        photoUrl: user.photoUrl
+      }
+
+      return userRef
+    }
 
   
   // doGoogleLogin() {

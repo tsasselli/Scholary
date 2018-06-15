@@ -1,3 +1,4 @@
+import { CoreRoutingModule, coreRoutedComponents } from './core/core-routing.module';
 import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,6 +9,7 @@ import { NewSchoolComponent } from './schools/components/new-school/new-school.c
 import { NewClassComponent } from './classes/components/new-class/new-class.component';
 import { SharedLinkComponent } from './subjects/components/shared-link/shared-link.component';
 import { ShareLinkComponent } from './subjects/components/share-new-link/share-link.component';
+import { UserProfileComponent } from './Auth/components/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,12 @@ import { ShareLinkComponent } from './subjects/components/share-new-link/share-l
     NewSchoolComponent,
     NewClassComponent,
     SharedLinkComponent,
-    ShareLinkComponent
+    ShareLinkComponent,
   ],
   imports: [
     BrowserModule,
-    CoreModule
+    CoreModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
