@@ -1,3 +1,4 @@
+import { AuthService } from './core/auth.service';
 import { CoreRoutingModule, coreRoutedComponents } from './core/core-routing.module';
 import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,6 +11,7 @@ import { NewClassComponent } from './classes/components/new-class/new-class.comp
 import { SharedLinkComponent } from './subjects/components/shared-link/shared-link.component';
 import { ShareLinkComponent } from './subjects/components/share-new-link/share-link.component';
 import { UserProfileComponent } from './Auth/components/user-profile/user-profile.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -23,9 +25,9 @@ import { UserProfileComponent } from './Auth/components/user-profile/user-profil
   imports: [
     BrowserModule,
     CoreModule,
-
+    RouterModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
