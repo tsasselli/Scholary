@@ -22,8 +22,10 @@ export class AuthService {
 
                 this.user = this.afAuth.authState.pipe(
                   switchMap(user => {
+                    // checks if user and returns Users doc based on uid from Users Doc in DB
+                    // and listens for value changes by returning an observable
                     if (user) {
-                      return this.afs.doc<Users>(`users/${user.uid}`).valueChanges()
+                      return this.afs.doc<Users>(`users/${user.uid}`).valueChanges() 
                     } else {
                       return Observable.of(null)
                     }
@@ -35,13 +37,16 @@ export class AuthService {
       return this.oAuthLogin(provider);
     }
 
+    // Returns the popup for the given provider
+    // then creates the user credential in the database
     private oAuthLogin(provider) {
-      this.afAuth.auth.signInWithPopup(provider)
+      return this.afAuth.auth.signInWithPopup(provider)
         .then((credential) => {
           this.updateUserData(credential.user)
         })
     }
 
+    // Helper function that that allows us to pass user object to the db.
     private updateUserData(user) {
       // sets user data to firestore on login 
       const userRef: AngularFirestoreDocument<Users> = this.afs.doc(`users/${user.uid}`);
@@ -52,21 +57,7 @@ export class AuthService {
         displayName: user.displayName,
         photoUrl: user.photoUrl
       }
-
       return userRef
     }
-
+  }
   
-  // doGoogleLogin() {
-  //   return new Promise<any>((resolve, reject) => {
-  //     let provider = new firebase.auth.GoogleAuthProvider();
-  //     provider.addScope('profile');
-  //     provider.addScope('email');
-  //     this.afAuth.auth
-  //       .signInWithPopup(provider)
-  //       .then(res => {
-  //         resolve(res);
-  //       })
-  //   })
-  // }
-}
