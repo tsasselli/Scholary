@@ -10,7 +10,7 @@ import { NewSchoolComponent } from './schools/components/new-school/new-school.c
 import { NewClassComponent } from './classes/components/new-class/new-class.component';
 import { SharedLinkComponent } from './subjects/components/shared-link/shared-link.component';
 import { ShareLinkComponent } from './subjects/components/share-new-link/share-link.component';
-import { UserProfileComponent } from './Auth/components/user-profile/user-profile.component';
+import { UserProfileComponent } from './core/auth/user-profile/user-profile.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({

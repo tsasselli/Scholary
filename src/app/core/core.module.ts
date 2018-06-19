@@ -9,7 +9,7 @@ import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { environment } from '../../environments/environment.prod';
-import { UserProfileComponent } from '../Auth/components/user-profile/user-profile.component';
+import { UserProfileComponent } from './auth/user-profile/user-profile.component';
 
 @NgModule({
   imports: [
