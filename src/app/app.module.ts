@@ -8,9 +8,7 @@ import { AppComponent } from './app.component';
 import { SchoolComponent } from './schools/components/school/school.component';
 import { NewSchoolComponent } from './schools/components/new-school/new-school.component';
 import { NewClassComponent } from './classes/components/new-class/new-class.component';
-import { SharedLinkComponent } from './subjects/components/shared-link/shared-link.component';
-import { ShareLinkComponent } from './subjects/components/share-new-link/share-link.component';
-import { UserProfileComponent } from './core/auth/user-profile/user-profile.component';
+import { UserProfileComponent } from './core/components/user-profile/user-profile.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -19,8 +17,6 @@ import { RouterModule } from '@angular/router';
     SchoolComponent,
     NewSchoolComponent,
     NewClassComponent,
-    SharedLinkComponent,
-    ShareLinkComponent,
   ],
   imports: [
     BrowserModule,

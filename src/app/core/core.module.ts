@@ -9,7 +9,8 @@ import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { environment } from '../../environments/environment.prod';
-import { UserProfileComponent } from './auth/user-profile/user-profile.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { UserProfileComponent } from './auth/user-profile/user-profile.component
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  declarations: [coreRoutedComponents],
+  declarations: [coreRoutedComponents, NotFoundComponent],
   providers: [AuthService],
 })
 

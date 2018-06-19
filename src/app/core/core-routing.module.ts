@@ -1,11 +1,13 @@
-import { UserProfileComponent } from './auth/user-profile/user-profile.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
-  { path: 'login', component: UserProfileComponent }
+  { path: 'login', component: UserProfileComponent },
+  { path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
