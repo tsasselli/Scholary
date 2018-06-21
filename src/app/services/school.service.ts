@@ -8,10 +8,11 @@ import { School } from '../models/school';
 })
 export class SchoolService {
 
-  school: Observable<School>;
+  school: Observable<School[]>;
 
   constructor(public afs: AngularFirestore) { 
-    
+    const schools: AngularFirestoreCollection<School> = this.afs.collection('school');
+    this.school = schools.valueChanges();
   }
 
   createSchool(school) {
@@ -22,6 +23,6 @@ export class SchoolService {
       description: school.description,
       imageUrl: school.imageUrl
     }
-    return schoolRef.doc('data.name').set(data);
+    return schoolRef.doc(school.name).set(data);
   }
 }

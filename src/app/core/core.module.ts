@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { AuthService } from './auth.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,6 +16,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     CoreRoutingModule,
     AngularFireAuthModule,
     AngularFirestoreModule,

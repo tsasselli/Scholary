@@ -1,3 +1,9 @@
-<p>
-  school works!
-</p>
+<button class="btn btn-primary" routerLink="/school/new">New School</button>
+<div *ngFor="let school of school$ | async" class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{school.imageUrl}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{school.name}}</h5>
+    <p class="card-text">{{school.description}}</p>
+    <a [routerLink]="['/school', school.name]" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>

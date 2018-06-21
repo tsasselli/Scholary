@@ -1,3 +1,4 @@
+import { SchoolService } from '../../../services/school.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SchoolComponent implements OnInit {
 
-  constructor() { }
+  constructor(private schoolService: SchoolService) { 
+  }
+  school$;
 
   ngOnInit() {
-
+    this.school$ = this.schoolService.school
   }
-
-  
 }

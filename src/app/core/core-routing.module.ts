@@ -1,3 +1,4 @@
+import { ClassComponent } from './../classes/class/class.component';
 import { SchoolComponent } from './../schools/components/school/school.component';
 import { NewClassComponent } from './../classes/components/new-class/new-class.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -10,9 +11,10 @@ import { NewSchoolComponent } from '../schools/components/new-school/new-school.
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
   { path: 'login', component: UserProfileComponent },
-  { path: 'school', component: SchoolComponent},
+  { path: 'school', component: SchoolComponent }, 
+  { path: 'school/:name', component: ClassComponent },
   { path: 'school/new', component: NewSchoolComponent },
-  { path: '**', component: NotFoundComponent}
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
@@ -21,4 +23,4 @@ const routes: Routes = [
 })
 export class CoreRoutingModule { }
 
-export const coreRoutedComponents = [UserProfileComponent, WelcomeComponent, SchoolComponent, NewSchoolComponent ];
+export const coreRoutedComponents = [UserProfileComponent, WelcomeComponent, SchoolComponent, NewSchoolComponent, ClassComponent ];

@@ -1,4 +1,4 @@
-import { SchoolService } from './school.service';
+import { SchoolService } from '../services/school.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
