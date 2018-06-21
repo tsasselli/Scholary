@@ -12,8 +12,9 @@ const routes: Routes = [
   { path: '', component: WelcomeComponent },
   { path: 'login', component: UserProfileComponent },
   { path: 'school', component: SchoolComponent }, 
-  { path: 'school/:name', component: ClassComponent },
   { path: 'school/new', component: NewSchoolComponent },
+  { path: 'school/:name', component: ClassComponent },
+
   { path: '**', component: NotFoundComponent },
 ];
 

@@ -21,7 +21,8 @@ export class NewSchoolComponent implements OnInit {
   }
 
   createNewSchool(schoolForm) {
-    const school = new School(schoolForm.name, schoolForm.description, schoolForm.imageUrl);
+    const schoolUrl: string = schoolForm.name.replace(/\s/g, "").toLowerCase()
+    const school = new School(schoolForm.name, schoolForm.description, schoolForm.imageUrl, schoolUrl);
     this.schoolService.createSchool(school);
     this.router.navigate(['/school']);
     }

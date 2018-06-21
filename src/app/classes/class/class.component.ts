@@ -1,3 +1,4 @@
+import { Class } from './../../models/class';
 import { ClassService } from './../../services/class.service';
 import { SchoolService } from './../../services/school.service';
 import { AngularFirestore } from 'angularfire2/firestore';
@@ -13,19 +14,22 @@ import { switchMap, map } from 'rxjs/operators';
 export class ClassComponent implements OnInit {
 
   class$;
+  class: Class[] = [];
 
   constructor(private afs: AngularFirestore,
               private route: ActivatedRoute,
               private classService: ClassService) { }
 
   ngOnInit() {
-     this.class$ = this.route.paramMap.pipe(
+      this.class$ =  this.route.paramMap.pipe(
       switchMap(params => {
         const name = params.get('name');
         const nameRef = this.classService.getClass(name);
-        console.log(nameRef);
-        return nameRef;
-      })
+         return nameRef//.pipe( {
+      //     map(data => {
+            
+      //     })
+       })
     )
   }
 

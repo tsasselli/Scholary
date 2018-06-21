@@ -17,12 +17,12 @@ export class SchoolService {
 
   createSchool(school) {
     const schoolRef: AngularFirestoreCollection<School> = this.afs.collection('school');
-
     const data: School = {
       name: school.name,
       description: school.description,
-      imageUrl: school.imageUrl
+      imageUrl: school.imageUrl,
+      url: school.url
     }
-    return schoolRef.doc(school.name).set(data);
+    return schoolRef.doc(school.url).set(data);
   }
 }

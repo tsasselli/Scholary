@@ -22,7 +22,7 @@ export class ClassService {
           a => {
             const data = a.payload.doc.id;
             console.log(data);
-            return data;
+            return data
           }
         )
       })
