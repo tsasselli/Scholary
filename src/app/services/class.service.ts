@@ -14,19 +14,22 @@ export class ClassService {
   constructor(public afs: AngularFirestore) { 
   }
 
-  getClass(schoolName) {
-    const classCollection: AngularFirestoreCollection<Class> = this.afs.collection('school').doc(`${schoolName}`).collection('classes');
-    return classCollection.snapshotChanges().pipe(
-      map(changes => {
-        return changes.map(
-          a => {
-            const data = a.payload.doc.id;
-            console.log(data);
-            return data
-          }
-        )
-      })
-    );
+  getClass(school) {
+     return this.afs.collection('school').doc('name').collection('class', ref => {
+     return ref.where('schoolId', '==', school.name)
+    });
+        // const classCollection: AngularFirestoreCollection<Class> = this.afs.collection('school').doc(`${schoolName}`).collection('classes');
+    // return classCollection.snapshotChanges().pipe(
+    //   map(changes => {
+    //     return changes.map(
+    //       a => {
+    //         const data = a.payload.doc.id;
+    //         console.log(data);
+    //         return data
+    //       }
+    //     )
+    //   })
+    // );
   }
 
 
