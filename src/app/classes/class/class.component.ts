@@ -30,6 +30,7 @@ export class ClassComponent implements OnInit {
             
       //     })
        })
+       
     )
   }
 
