@@ -19,12 +19,21 @@ export class ClassService {
   }
 
   getClass(school) {
-    return this.afs.collection('class').valueChanges().pipe(
+    const classReference = this.afs.collection('class', ref => ref.where('schoolId', '==', school));
+
+    return classReference.valueChanges().pipe(
       map(data => {
         console.log(data);
         return data
-        })
-    )
+      }))
+    
+    // const query = classReference.where('schoolId', '==', school);
+    // return this.afs.collection('class').valueChanges().pipe(
+    //   map(data => {
+    //     console.log(data);
+    //     return data
+    //     })
+    // )
     // return this.afs.collection('class').doc(`${school}`).snapshotChanges().pipe(
     //   map(a => {
     //       const data = a.payload.data() as Class;
@@ -50,7 +59,6 @@ export class ClassService {
     //     )
     //   })
     // );
-  }
 
-
+    }
 }
