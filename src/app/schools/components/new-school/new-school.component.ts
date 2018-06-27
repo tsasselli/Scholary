@@ -15,9 +15,7 @@ export class NewSchoolComponent implements OnInit {
   school$;
 
   ngOnInit() {
-
    this.school$ =  this.schoolService.school
-
   }
 
   createNewSchool(schoolForm) {
@@ -26,4 +24,4 @@ export class NewSchoolComponent implements OnInit {
     this.schoolService.createSchool(school);
     this.router.navigate(['/school']);
     }
-    }
+}

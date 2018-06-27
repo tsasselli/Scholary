@@ -6,10 +6,12 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AuthService } from './core/auth.service';
 import { CoreModule } from './core/core.module';
+import { NewClassLinkComponent } from './classes/components/new-class-link/new-class-link.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NewClassLinkComponent,
     
   ],
   imports: [

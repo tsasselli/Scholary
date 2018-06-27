@@ -15,6 +15,7 @@ export class ClassComponent implements OnInit {
 
   class$;
   class: Class[] = [];
+  schoolName: string;
 
   constructor(private afs: AngularFirestore,
               private route: ActivatedRoute,
@@ -25,13 +26,9 @@ export class ClassComponent implements OnInit {
       switchMap(params => {
         const name = params.get('name');
         const nameRef = this.classService.getClass(name);
-         return nameRef//.pipe( {
-      //     map(data => {
-            
-      //     })
-       })
-       
-    )
+        this.schoolName = name;
+         return nameRef
+       }));
   }
 
 }

@@ -1,6 +1,6 @@
 import { ClassComponent } from './../classes/class/class.component';
 import { SchoolComponent } from './../schools/components/school/school.component';
-import { NewClassComponent } from './../classes/components/new-class/new-class.component';
+import { NewClassComponent } from '../classes/components/new-class-form/new-class.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { NgModule } from '@angular/core';
@@ -13,8 +13,8 @@ const routes: Routes = [
   { path: 'login', component: UserProfileComponent },
   { path: 'school', component: SchoolComponent }, 
   { path: 'school/new', component: NewSchoolComponent },
-  { path: 'school/new-class', component: NewClassComponent },
   { path: 'school/:name', component: ClassComponent },
+  { path: 'school/:name/new-class', component: NewClassComponent },
 
   { path: '**', component: NotFoundComponent },
 ];
