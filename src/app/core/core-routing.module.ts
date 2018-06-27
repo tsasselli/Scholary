@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'login', component: UserProfileComponent },
   { path: 'school', component: SchoolComponent }, 
   { path: 'school/new', component: NewSchoolComponent },
+  { path: 'school/new-class', component: NewClassComponent },
   { path: 'school/:name', component: ClassComponent },
 
   { path: '**', component: NotFoundComponent },
@@ -24,4 +25,4 @@ const routes: Routes = [
 })
 export class CoreRoutingModule { }
 
-export const coreRoutedComponents = [UserProfileComponent, WelcomeComponent, SchoolComponent, NewSchoolComponent, ClassComponent ];
+export const coreRoutedComponents = [UserProfileComponent, WelcomeComponent, SchoolComponent, NewSchoolComponent, NewClassComponent, ClassComponent ];
