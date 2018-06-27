@@ -4,5 +4,10 @@ export class Class {
     // description: string;
     // schoolId?: string;
 
-    constructor(public name: string, public imageUrl: string, public description: string, public schoolId: string, public classId: string){}
+    constructor(public name: string,
+                public imageUrl: string,
+                public description: string,
+                public schoolId: string,
+                public classId: string,
+                public uid: string){}
 }

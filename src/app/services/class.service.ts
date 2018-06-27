@@ -35,7 +35,8 @@ export class ClassService {
       description: classForm.description,
       imageUrl: classForm.imageUrl,
       schoolId: classForm.schoolId,
-      classId: classForm.classId
+      classId: classForm.classId,
+      uid: classForm.uid
     }
     return classRef.add(data)
   }

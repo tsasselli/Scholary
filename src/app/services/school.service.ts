@@ -21,7 +21,8 @@ export class SchoolService {
       name: school.name,
       description: school.description,
       imageUrl: school.imageUrl,
-      url: school.url
+      url: school.url,
+      uid: school.uid
     }
     return schoolRef.doc(school.url).set(data);
   }
