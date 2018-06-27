@@ -3,7 +3,7 @@
     <h5 class="card-title">{{class?.name}}</h5>
     <p class="card-text">{{class?.description}}</p>
     <div class="row">
-      <button class="btn btn-primary">Subjects</button>
+      <button [routerLink]="['/school', class.schoolId, 'classrooms', class.classId, 'subjects']" class="btn btn-primary">Subjects</button>
     </div>
     <div class="row">
     </div>

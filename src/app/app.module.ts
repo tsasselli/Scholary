@@ -6,13 +6,15 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AuthService } from './core/auth.service';
 import { CoreModule } from './core/core.module';
-import { NewClassLinkComponent } from './classes/components/new-class-link/new-class-link.component';
+import { SubjectsComponent } from './subjects/subjects/subjects.component';
+import { LinksComponent } from './subjects/components/links/links.component';
+import { NewLinkComponent } from './subjects/components/new-link/new-link.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewClassLinkComponent,
-    
+    LinksComponent,
+    NewLinkComponent,
   ],
   imports: [
     BrowserModule,

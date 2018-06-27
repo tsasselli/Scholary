@@ -1,0 +1,11 @@
+<form #newSubject="ngForm">
+  <div class="form-group">
+    <label for="title">Subject Name</label>
+    <input #title="ngModel" name="title" ngModel type="text" class="form-control"  placeholder="Javascript For Loops">
+  </div>
+  <button type="submit" (click)="createNewSubject(newSubject.value); newSubject.reset()" class="btn btn-primary">Submit</button>
+</form>
+
+<div *ngFor="let subject of subject$ | async" class="row">
+  <h2>{{ subject.title }}</h2>
+</div>

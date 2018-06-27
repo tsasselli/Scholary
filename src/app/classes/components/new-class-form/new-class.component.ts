@@ -41,5 +41,4 @@ export class NewClassComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-
 }
