@@ -27,8 +27,9 @@ export class NewLinkComponent implements OnInit, OnDestroy {
               private actRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.classId = this.actRoute.snapshot.params['name'];
-    this.schoolId = this.actRoute.snapshot.params['className'];
+    this.subjectID = this.subjectID.replace(/\s/g, "").toLowerCase();
+    this.classId = this.actRoute.snapshot.params['className'];
+    this.schoolId = this.actRoute.snapshot.params['name'];
     this.sub = this.authServ.user.subscribe(user => {
     this.user = user;
     }, error => {

@@ -30,9 +30,12 @@ export class LinksService {
     })
   }
 
-  getLinksWithSub(subject: string): Observable<Links[]> {
+  getLinksWithSub(subject: string, classId, schoolId): Observable<Links[]> {
     const subjectsLinkRef: AngularFirestoreCollection<Links> = this.afs.collection('links', ref => {
-      return ref.where(`subjectId`, '==', `${subject}`); 
+      return ref.where(`subjectId`, '==', `${subject}`)
+       .where('classId', '==', `${classId}`)
+       .where('schoolId', '==', `${schoolId}`);
+       
     });
     const subjObsv = subjectsLinkRef.valueChanges();
     return subjObsv;
