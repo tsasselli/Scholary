@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { LinksService } from './../../services/links.service';
 import { SubjectService } from './../../services/subject.service';
 import { Subjects } from './../../models/subjects';
@@ -14,12 +15,17 @@ export class SubjectsComponent implements OnInit {
 
   subject$: Observable<Subjects[]>;
   subjectID: string;
+  classId: string;
+  schoolId: string;
 
   constructor(private subjectService: SubjectService,
-              private linkService: LinksService) { }
+              private linkService: LinksService,
+              private actRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.subject$ = this.subjectService.subjects$
+    this.classId = this.actRoute.snapshot.params['className'];
+    this.schoolId = this.actRoute.snapshot.params['name'];
+    this.subject$ = this.subjectService.getSubjectsById(this.schoolId, this.classId)
     this.subjectService.subjects$.subscribe(data => {
         return data.map(sub => {
           this.subjectID = sub.subId;

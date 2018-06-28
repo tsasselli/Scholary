@@ -25,8 +25,8 @@ export class NewSubjectFormComponent implements OnInit {
     private auth: AuthService) { }
 
   ngOnInit() {
-    this.schoolName = this.actRoute.snapshot.params['name'];
-    this.className = this.actRoute.snapshot.params['className'];
+    this.schoolName = this.actRoute.snapshot.params['className'];
+    this.className = this.actRoute.snapshot.params['name'];
     this.sub = this.auth.user.subscribe(user => {
       this.user = user;
     })
