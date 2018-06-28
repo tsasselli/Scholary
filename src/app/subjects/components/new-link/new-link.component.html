@@ -1,3 +1,10 @@
-<p>
-  new-link works!
-</p>
+<div class="container-flex">
+  <div class="row">
+    <form #newLink="ngForm">
+      <div class="input-group">
+        <input #link="ngModel" name="link" ngModel type="text" class="form-control" placeholder="add a link to share!">
+      <button type="submit" (click)="createNewLink(newLink.value); newLink.reset()" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+  </div>
+</div>

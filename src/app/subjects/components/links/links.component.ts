@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Links } from './../../../models/links';
+import { Observable } from 'rxjs';
+import { LinksService } from './../../../services/links.service';
+import { Subjects } from './../../../models/subjects';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-links',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LinksComponent implements OnInit {
 
-  constructor() { }
+  @Input('subjectID') subjectID: string;
+  link$: Observable<Links[]>;
+  subject$;
+
+  constructor(private linkService: LinksService, 
+              ) { }
 
   ngOnInit() {
+    console.log(this.subjectID)
+     this.linkService.getLinksWithSub(this.subjectID );
+     this.linkService.linkSubject.subscribe(link => {
+      return link.map(linkData => {
+        this.subject$ = linkData.subjectId
+      })
+     })
   }
 
 }

@@ -1,6 +1,7 @@
 export interface Links {
-    title: string;
-    description: string;
-    sharedBy: string;
-    numberOfUpVotes: number;
+    linkUrl: string;
+    uid: string;
+    userName: string;
+    userImage: string;
+    subjectId: string;
 }

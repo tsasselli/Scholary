@@ -15,9 +15,14 @@ export class SubjectService {
     this.subjects$ = subjects.valueChanges();
   }
 
-  createSubject(subject) {
+  createSubject(subject, schoolName, className, uid, userImage, subjectId) {
     this.afs.collection('subjects').add({
-        title: subject.title
+        title: subject,
+        classId: schoolName,
+        schoolId: className,
+        uid: uid,
+        userImage: userImage,
+        subId: subjectId
       }
     )};
 }

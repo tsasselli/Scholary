@@ -1,3 +1,4 @@
+import { NewLinkComponent } from './../subjects/components/new-link/new-link.component';
 import { SubjectsComponent } from './../subjects/subjects/subjects.component';
 import { ClassComponent } from './../classes/class/class.component';
 import { SchoolComponent } from './../schools/components/school/school.component';
@@ -9,10 +10,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { NewSubjectFormComponent } from '../subjects/components/new-subject-form/new-subject-form.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NewSchoolComponent } from '../schools/components/new-school/new-school.component';
+import { LinksComponent } from '../subjects/components/links/links.component';
 
 
 const routes: Routes = [
-  { path: '', component: WelcomeComponent },
+  { path: '',  redirectTo: 'school', pathMatch: 'full' },
   { path: 'login', component: UserProfileComponent },
   { path: 'school', component: SchoolComponent }, 
   { path: 'school/new', component: NewSchoolComponent },
@@ -28,4 +30,4 @@ const routes: Routes = [
 })
 export class CoreRoutingModule { }
 
-export const coreRoutedComponents = [UserProfileComponent, WelcomeComponent, SchoolComponent, NewSchoolComponent, NewClassComponent, ClassComponent, SubjectsComponent, NewSubjectFormComponent ];
+export const coreRoutedComponents = [UserProfileComponent, WelcomeComponent, SchoolComponent, NewSchoolComponent, NewClassComponent, ClassComponent, SubjectsComponent, NewSubjectFormComponent, NewLinkComponent, LinksComponent ];

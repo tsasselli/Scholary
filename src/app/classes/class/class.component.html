@@ -1,5 +1,6 @@
 <div *ngFor="let class of class$ | async" class="card" style="width: 18rem;">
   <div class="card-body">
+      <img class="card-img-top" src="{{class.imageUrl}}" alt="Card image cap">
     <h5 class="card-title">{{class?.name}}</h5>
     <p class="card-text">{{class?.description}}</p>
     <div class="row">
