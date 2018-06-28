@@ -14,18 +14,21 @@ export class LinksComponent implements OnInit {
   @Input('subjectID') subjectID: string;
   link$: Observable<Links[]>;
   subject$;
+  
 
-  constructor(private linkService: LinksService, 
-              ) { }
+  constructor(private linkService: LinksService) { }
 
   ngOnInit() {
+    this.subjectID = this.subjectID.replace(/\s/g, "").toLowerCase();
     console.log(this.subjectID)
-     this.linkService.getLinksWithSub(this.subjectID );
-     this.linkService.linkSubject.subscribe(link => {
-      return link.map(linkData => {
-        this.subject$ = linkData.subjectId
-      })
-     })
+     this.link$ = this.linkService.getLinksWithSub(this.subjectID );
+     console.log(this.link$);
+    //  this.linkService.linkSubject.subscribe(link => {
+    //   return link.map(linkData => {
+    //     this.subject$ = linkData;
+    //     console.log(linkData);
+    //   })
+    //  });
   }
 
 }

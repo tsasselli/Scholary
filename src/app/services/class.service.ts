@@ -28,7 +28,7 @@ export class ClassService {
       }));
   }
 
-  createClass(classForm) {
+  createClass(classForm: Class) {
     const classRef = this.afs.collection<Class>("class");
     const data: Class = {
       name: classForm.name,
@@ -36,7 +36,8 @@ export class ClassService {
       imageUrl: classForm.imageUrl,
       schoolId: classForm.schoolId,
       classId: classForm.classId,
-      uid: classForm.uid
+      uid: classForm.uid,
+      instructor: classForm.instructor
     }
     return classRef.add(data)
   }

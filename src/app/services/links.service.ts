@@ -12,26 +12,29 @@ export class LinksService {
 
   link$: Observable<Links[]>;
   linkSubject: Observable<Links[]>;
-
+  
   constructor(public afs: AngularFirestore) {
     const subjects: AngularFirestoreCollection<Links> = this.afs.collection('links');
     this.link$ = subjects.valueChanges();
   }
 
-  addLink(link, user: Users, subject: string) {
+  addLink(link, user: Users, subject: string, classId, schoolId) {
     this.afs.collection('links').add({
       link: link,
       userName: user.displayName,
       userImage: user.photoURL,
       subjectId: subject,
+      classId: classId,
+      schoolId: schoolId,
       uid: user.uid
     })
   }
 
-  getLinksWithSub(subject: string) {
-    const subjects: AngularFirestoreCollection<Links> = this.afs.collection('links', ref => {
-      return ref.where(`${subject}`, '==', 'subjectId')
+  getLinksWithSub(subject: string): Observable<Links[]> {
+    const subjectsLinkRef: AngularFirestoreCollection<Links> = this.afs.collection('links', ref => {
+      return ref.where(`subjectId`, '==', `${subject}`); 
     });
-    this.linkSubject = subjects.valueChanges();
+    const subjObsv = subjectsLinkRef.valueChanges();
+    return subjObsv;
   }
 }

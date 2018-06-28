@@ -4,4 +4,6 @@ export interface Links {
     userName: string;
     userImage: string;
     subjectId: string;
+    classId: string;
+    schoolId: string;
 }

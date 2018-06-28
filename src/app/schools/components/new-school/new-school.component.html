@@ -1,15 +1,15 @@
 <form #newSchool="ngForm">
   <div class="form-group">
     <label for="name">School Name</label>
-    <input #schoolName="ngModel" name="name" ngModel="name" type="text" class="form-control" id="schoolName" placeholder="Example Academy">
+    <input #schoolName="ngModel" name="name" ngModel type="text" class="form-control" id="schoolName" placeholder="Example Academy">
   </div>
   <div class="form-group">
     <label for="description">School Details</label>
-    <input #description="ngModel" name="description" ngModel="description" type="text" class="form-control" id="exampleInputPassword1" placeholder="Example Academy is a learning community for students who like learning by example.">
+    <input #description="ngModel" name="description" ngModel type="text" class="form-control" id="exampleInputPassword1" placeholder="Example Academy is a learning community for students who like learning by example.">
   </div>
   <div class="form-group">
     <label for="imageURL">Logo URL</label>
-    <input #imageUrl="ngModel" name="imageUrl" ngModel="imageUrl" type="text" class="form-control" id="exampleInputPassword1" placeholder="example.com/examplelogo.jpg">
+    <input #imageUrl="ngModel" name="imageUrl" ngModel type="text" class="form-control" id="exampleInputPassword1" placeholder="example.com/examplelogo.jpg">
   </div>
   <button type="submit" (click)="createNewSchool(newSchool.value)" class="btn btn-primary">Submit</button>
 </form>

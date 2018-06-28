@@ -1,3 +1,4 @@
+import { Users } from './../../../models/users';
 import { switchMap, map } from 'rxjs/operators';
 import { Class } from '../../../models/class';
 import { ClassService } from '../../../services/class.service';
@@ -16,7 +17,7 @@ export class NewClassComponent implements OnInit, OnDestroy {
 
   schoolName: string;
   sub: Subscription;
-  uid: string; 
+  user: Users; 
 
   constructor(private classService: ClassService, 
               private route: ActivatedRoute,
@@ -25,15 +26,14 @@ export class NewClassComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.schoolName = this.route.snapshot.params['name'];
-    console.log(this.schoolName);
     this.sub = this.authService.user.subscribe(user => {
-      this.uid = user.uid;
+      this.user = user;
     });
   }
 
   createNewClass(classForm) {
     const classId: string = classForm.name.replace(/\s/g, "").toLowerCase();
-    const newClass = new Class(classForm.name, classForm.imageUrl, classForm.description, this.schoolName, classId, this.uid)
+    const newClass = new Class(classForm.name, classForm.imageUrl, classForm.description, this.schoolName, classId, this.user.uid, this.user.displayName)
     this.classService.createClass(newClass);
     this.router.navigate([`/school/` + `${this.schoolName}` + '/classrooms']);
   }

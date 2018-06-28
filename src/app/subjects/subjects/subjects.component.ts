@@ -23,7 +23,6 @@ export class SubjectsComponent implements OnInit {
     this.subjectService.subjects$.subscribe(data => {
         return data.map(sub => {
           this.subjectID = sub.subId;
-          console.log(this.subjectID);
         });
     })}
 }

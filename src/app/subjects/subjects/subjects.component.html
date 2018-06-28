@@ -3,8 +3,8 @@
     <div *ngFor="let subject of subject$ | async" class="row">
         <div class="list-group">
             <h4 class="list-group-item">{{ subject.title }}</h4>
-            <app-new-link [subject]='subject' class="list-group-item newLink"></app-new-link>
-            <app-links [subjectID]='subjectID' class="list-group-item newLink"></app-links>
+            <app-new-link [subjectID]='subject.title' class="list-group-item newLink"></app-new-link>
+            <app-links [subjectID]='subject.title' class="list-group-item newLink"></app-links>
         </div>
     </div>
 </div>

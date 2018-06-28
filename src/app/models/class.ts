@@ -9,5 +9,6 @@ export class Class {
                 public description: string,
                 public schoolId: string,
                 public classId: string,
-                public uid: string){}
+                public uid: string,
+                public instructor: string){}
 }
