@@ -12,6 +12,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../../environments/environment.prod';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { UpvoteButtonComponent } from './components/upvote-button/upvote-button.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  declarations: [coreRoutedComponents, NotFoundComponent],
+  declarations: [coreRoutedComponents, NotFoundComponent, UpvoteButtonComponent],
   providers: [AuthService],
 })
 

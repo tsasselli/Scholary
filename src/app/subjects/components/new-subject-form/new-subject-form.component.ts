@@ -30,7 +30,6 @@ export class NewSubjectFormComponent implements OnInit {
     this.sub = this.auth.user.subscribe(user => {
       this.user = user;
     })
-    
   }
 
   createNewSubject(subjectForm) {
@@ -38,5 +37,4 @@ export class NewSubjectFormComponent implements OnInit {
     this.subjectService.createSubject(subjectForm.title, this.schoolName, this.className, this.user.uid, this.user.photoURL, subMini);
     subjectForm.title = '';
   }
-
 }
