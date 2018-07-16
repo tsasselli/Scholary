@@ -10,7 +10,7 @@ import { SubjectsComponent } from './subjects/subjects/subjects.component';
 
 @NgModule({
   declarations: [
-    AppComponent,   
+    AppComponent,
   ],
   imports: [
     BrowserModule,

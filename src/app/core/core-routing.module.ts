@@ -1,3 +1,4 @@
+import { NewClassLinkComponent } from './../classes/components/new-class-link/new-class-link.component';
 import { NewLinkComponent } from './../subjects/components/new-link/new-link.component';
 import { SubjectsComponent } from './../subjects/subjects/subjects.component';
 import { ClassComponent } from './../classes/class/class.component';
@@ -30,4 +31,4 @@ const routes: Routes = [
 })
 export class CoreRoutingModule { }
 
-export const coreRoutedComponents = [UserProfileComponent, WelcomeComponent, SchoolComponent, NewSchoolComponent, NewClassComponent, ClassComponent, SubjectsComponent, NewSubjectFormComponent, NewLinkComponent, LinksComponent ];
+export const coreRoutedComponents = [UserProfileComponent, WelcomeComponent, SchoolComponent, NewSchoolComponent, NewClassComponent, ClassComponent, SubjectsComponent, NewSubjectFormComponent, NewLinkComponent, NewClassLinkComponent, LinksComponent ];
